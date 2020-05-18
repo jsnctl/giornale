@@ -1,8 +1,8 @@
 # giornale
 
 - [ ] Parse and persist RSS
-	- [ ] Parse data
-	- [ ] Store data in standard format
+	- [x] Parse data
+	- [x] Store data in standard format
 	- [ ] Set cadence of data parsing service
 - [ ] Tokenise data
 	- [ ] Create and persist tokens
