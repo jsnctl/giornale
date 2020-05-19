@@ -1,7 +1,7 @@
 import feedparser
 import translate
 import yaml
-from db.models import Headline
+from db.models import Translation
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -17,8 +17,8 @@ entries = feed['entries']
 
 for entry in entries:
     session = Session()
-    headline = Headline(language="italian",
-                        original_text=entry['summary'],
-                        translated_text=translate.translate_text(entry['summary']))
+    headline = Translation(language="italian",
+                           original_text=entry['summary'],
+                           translated_text=translate.translate_text(entry['summary']))
     session.add(headline)
     session.commit()
