@@ -8,7 +8,7 @@
 	- [ ] Create and persist tokens
 	- [ ] POS tagging/token cleaning
 - [ ] 'To English' service
-	- [ ] Get translation of tokens
+	- [x] Get translation of ~tokens~ full phrases
 	- [ ] Persist tokens and translations in standard format
 - [ ] API
 	- [ ] Get exercise/bag of tokens & translations
