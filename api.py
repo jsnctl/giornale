@@ -1,25 +1,26 @@
 from flask import Flask
-from flask_restful import Resource, Api
-from sqlalchemy import create_engine
+from controllers.translation_controller import \
+    (TranslationByIdEndpoint, TranslationByLanguageEndpoint)
+from extensions import db, api
 import yaml
-import pandas as pd
 
 CREDENTIALS = yaml.load(open("./credentials.yaml", "rb"),
                         Loader=yaml.FullLoader)
 
-app = Flask(__name__)
-api = Api(app)
 
-engine = create_engine(CREDENTIALS['database']['db_url'])
+def create_app():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = CREDENTIALS['database']['db_url']
 
+    api.add_resource(TranslationByIdEndpoint, '/translation/<id>')
+    api.add_resource(TranslationByLanguageEndpoint, '/translation/lang/<language>')
 
-class HeadlineSimple(Resource):
-    def get(self, **kwargs):
-        data = pd.read_sql("""SELECT * FROM headline LIMIT 10""", engine)
-        return data['original_text'].to_json()
+    api.init_app(app)
+    db.init_app(app)
 
-api.add_resource(HeadlineSimple, '/headline')
+    return app
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    create_app().run(debug=True)
 

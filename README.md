@@ -11,4 +11,5 @@
 	- [x] Get translation of ~tokens~ full phrases
 	- [ ] Persist tokens and translations in standard format
 - [ ] API
+    - [x] Simple `GET` for local db translations
 	- [ ] Get exercise/bag of tokens & translations
