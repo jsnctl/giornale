@@ -1,11 +1,19 @@
+from dataclasses import dataclass
+
 from sqlalchemy import Column, DateTime, String, Integer, func
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from extensions import db
 
 
-class Headline(Base):
-    __tablename__ = 'headline'
+@dataclass
+class Translation(db.Model):
+
+    id: int
+    added: str
+    language: str
+    original_text: str
+    translated_text: str
+
+    __tablename__ = 'translation'
     id = Column(Integer, primary_key=True)
     added = Column(DateTime, default=func.now())
     language = Column(String)
