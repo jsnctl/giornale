@@ -1,6 +1,5 @@
 from flask import Flask
-from controllers.translation_controller import \
-    (TranslationByIdEndpoint, TranslationByLanguageEndpoint)
+from endpoints import translation_endpoint, exercise_endpoint
 from extensions import db, api
 import yaml
 
@@ -12,8 +11,10 @@ def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = CREDENTIALS['database']['db_url']
 
-    api.add_resource(TranslationByIdEndpoint, '/translation/<id>')
-    api.add_resource(TranslationByLanguageEndpoint, '/translation/lang/<language>')
+    api.add_resource(translation_endpoint.TranslationByIdEndpoint, '/translation/<id>')
+    api.add_resource(translation_endpoint.TranslationByLanguageEndpoint, '/translation/lang/<language>')
+
+    api.add_resource(exercise_endpoint.ExerciseEndpoint, '/exercise')
 
     api.init_app(app)
     db.init_app(app)
