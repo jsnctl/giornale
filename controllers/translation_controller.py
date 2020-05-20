@@ -3,20 +3,12 @@ from flask_restful import Resource
 from db.models import Translation
 
 
-class TranslationByIdEndpoint(Resource):
+class TranslationController:
 
-    def get(self, id):
+    def get_translation_by_id(self, id):
         result = Translation.query.filter_by(id=id).first()
-        return jsonify(result)
+        return result
 
-
-class TranslationByLanguageEndpoint(Resource):
-
-    def get(self, language):
-        result = (
-            Translation.query
-                .filter_by(language=language)
-                .limit(50)
-                .all()
-        )
-        return jsonify(result)
+    def get_N_translations_by_language(self, language, N):
+        results = Translation.query.filter_by(language=language).limit(N).all()
+        return results
