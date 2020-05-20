@@ -12,4 +12,5 @@
 	- [ ] Persist tokens and translations in standard format
 - [ ] API
     - [x] Simple `GET` for local db translations
-	- [ ] Get exercise/bag of tokens & translations
+	- [x] Get exercise/bag of ~tokens &~ translations
+	- [ ] Exercise as a first-class entity
