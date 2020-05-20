@@ -1,6 +1,7 @@
 class Translation:
 
-    def __init__(self, original_text, translated_text):
+    def __init__(self, language, original_text, translated_text):
+        self.language = language
         self.original_text = original_text
         self.translated_text = translated_text
 
