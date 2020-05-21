@@ -1,6 +1,6 @@
 # giornale
 
-![early-giornale-logo](./giornale.png | width=40)
+<img src="./giornale.png" width="45" height="40">
 
 - [ ] Parse and persist RSS
 	- [x] Parse data
