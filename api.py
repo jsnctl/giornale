@@ -8,10 +8,6 @@ CREDENTIALS = yaml.load(open("./credentials.yaml", "rb"),
                         Loader=yaml.FullLoader)
 
 
-
-
-
-
 def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = CREDENTIALS['database']['db_url']
