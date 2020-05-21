@@ -8,5 +8,5 @@ controller = ExerciseController()
 class ExerciseEndpoint(Resource):
 
     def get(self):
-        exercise = controller.generate_exercise("italian", 10)
+        exercise = controller.generate_exercise("italian", 15)
         return jsonify(exercise.translations)
