@@ -1,5 +1,7 @@
 # giornale
 
+![early-giornale-logo][./giornale.png]
+
 - [ ] Parse and persist RSS
 	- [x] Parse data
 	- [x] Store data in standard format
