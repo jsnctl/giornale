@@ -14,3 +14,4 @@
     - [x] Simple `GET` for local db translations
 	- [x] Get exercise/bag of ~tokens &~ translations
 	- [ ] Exercise as a first-class entity
+	- [x] Basic React `giornale-frontend` consuming from `/exercise` endpoint
