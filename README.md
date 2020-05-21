@@ -1,6 +1,6 @@
 # giornale
 
-![early-giornale-logo][https://raw.githubusercontent.com/jsnctl/giornale/master/giornale.png]
+![early-giornale-logo](./giornale.png)
 
 - [ ] Parse and persist RSS
 	- [x] Parse data
