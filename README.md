@@ -9,9 +9,12 @@
 - [ ] Tokenise data
 	- [ ] Create and persist tokens
 	- [ ] POS tagging/token cleaning
-- [ ] 'To English' service
-	- [x] Get translation of ~tokens~ full phrases
+- [ ] ~'To English' service~ Translations from multi-RSS
+	- [x] Get translation of ~tokens~ full phrases (_deprecated_)
+	- [x] 1-1 correspondence between English-Italian RSS parsed strings
+	  - [ ] General method for this (currently RSS-specific)
 	- [ ] Persist tokens and translations in standard format
+	  - [ ] Sequence and sequence comparison for translation accuracy
 - [ ] API
     - [x] Simple `GET` for local db translations
 	- [x] Get exercise/bag of ~tokens &~ translations
