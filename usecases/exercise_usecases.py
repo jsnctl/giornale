@@ -23,7 +23,7 @@ def create_random_exercise(no_translations):
 
     exercise = Exercise()
 
-    random_seed = [np.random.randint(1, 100) for _ in np.arange(no_translations)]
+    random_seed = [np.random.randint(480, 500) for _ in np.arange(no_translations)]
     app.logger.info("Exercise from {0} Translations: ids {1}".format(no_translations, random_seed))
 
     for translation_id in random_seed:
