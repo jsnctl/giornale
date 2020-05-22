@@ -1,6 +1,7 @@
 from controllers.translation_controller import TranslationController
 import numpy as np
 from entities.exercise import Exercise
+from flask import current_app as app
 
 controller = TranslationController()
 
@@ -22,7 +23,8 @@ def create_random_exercise(no_translations):
 
     exercise = Exercise()
 
-    random_seed = [np.random.randint(0, 100) for _ in np.arange(no_translations)]
+    random_seed = [np.random.randint(1, 100) for _ in np.arange(no_translations)]
+    app.logger.info("Exercise from {0} Translations: ids {1}".format(no_translations, random_seed))
 
     for translation_id in random_seed:
         translation = controller.get_translation_by_id(translation_id)
